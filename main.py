@@ -72,8 +72,8 @@ def delete_file():
     location = "file"
     path = os.path.join(location, file)
     try:
-        #os.remove(os.path.join(app.config['UPLOADED_IMAGES_DEST'], file))
-        os.remove(path)
+        os.remove(os.path.join(app.config['UPLOADED_IMAGES_DEST'], file))
+        #os.remove(path)
         #for root, dirs, files in os.walk('uploads/images'):
             #for file in files:
                 #os.remove(os.path.join(root))
