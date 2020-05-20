@@ -7,7 +7,7 @@ import speech_recognition as sr
 
 app = Flask(__name__)
 
-UPLOADED_IMAGES_DEST = 'uploads/images'
+UPLOADED_IMAGES_DEST = 'file'
 app.config['UPLOADED_IMAGES_DEST'] = UPLOADED_IMAGES_DEST
 app.config['SECRET_KEY'] = 'thisisasecret'
 
@@ -20,30 +20,30 @@ def allowed_file(filename):
 
 @app.route('/')
 def home():
-    return render_template('index.html')
+    return render_template('original.html')
 
 @app.route('/uploads', methods=['GET', 'POST'])
 def upload_file():
-    if 'file' not in request.files:
-        abort('No file part')
     file = request.files['file']
-    pool = ThreadPoolExecutor(max_workers=1)
     if file and allowed_file(file.filename):
         filename = secure_filename(file.filename)
         file.save(os.path.join(app.config['UPLOADED_IMAGES_DEST'], filename))
-        #os.remove(os.path.join(app.config['UPLOADED_IMAGES_DEST'], filename))
-        flash('File(s) successfully uploaded')
-        pool.shutdown(wait=True)
         text = "File uploaded Successfully....."
     else:
         text = "Your file was not a Audio file or not audio.wav"
-    return render_template('upload.html', prediction = text)
+    return render_template('predict.html', prediction = text)
+
+
+    #pool = ThreadPoolExecutor(max_workers=1)
+    #os.remove(os.path.join(app.config['UPLOADED_IMAGES_DEST'], filename))
+    #flash('File(s) successfully uploaded')
+    #pool.shutdown(wait=True)
 
 
 
 @app.route('/view_file', methods=['GET','POST'])
 def view_file():
-    file_name = 'uploads/images/audio.wav'
+    file_name = 'file/audio.wav'
     speech = sr.AudioFile(file_name)
     recog = sr.Recognizer()
     with speech as filename:
@@ -69,7 +69,7 @@ def view_file():
 @app.route('/delete_file', methods=['GET','POST'])
 def delete_file():
     file = 'audio.wav'
-    location = "uploads/images/"
+    location = "file"
     path = os.path.join(location, file)
     try:
         #os.remove(os.path.join(app.config['UPLOADED_IMAGES_DEST'], file))

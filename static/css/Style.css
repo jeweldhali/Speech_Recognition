@@ -1,0 +1,126 @@
+/******
+.bg{
+  background: url('../images/bg4.jpg') no-repeat;
+  width: 100%;
+  height: 100vh;
+  background-size: 200%;
+}
+
+.form-container{
+  position: absolute;
+  top: 5vh;
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  #box-shadow: 0px 0px 10px 0px #000;
+}
+
+#form{
+  background-color: #fff;
+  min-height: 760px;
+  padding: 5px 40px 0px 40px
+  box-shadow: 0px 0px 10px 0px #000;
+}
+
+@media only screen and (max-width: 678px) {
+  .bg{
+    background-size: 600%
+  }
+}
+
+*****/
+.wrapper{
+  background: #E0FFFF;
+  width: 500px;
+  margin: 2% auto;
+  padding: 8px 0 0 0;
+}
+
+
+
+.sty{
+  margin: auto;
+  margin: 20px 10px 30px 50px;
+  padding: 20px;
+  #background-color: green;
+}
+
+.sty ul{
+  list-style-type: none;
+}
+
+.sty ul li{
+  float: left;
+}
+.sty ul li a{
+    text-decoration: none;
+    color: #fff;
+    padding: 12px 22px;
+    background: green;
+  }
+  .sty ul li a:hover{
+    background: #000;
+    color: blue;
+  }
+
+
+  .justifier{
+    text-align: justify;
+  }
+
+
+/*****Start Facilities Css****/
+#facilities{
+  #background-color: #dbe5e6;
+  padding: 30px;
+}
+
+#facilities h1{
+  font-weight: 900;
+  font-size: 34px;
+  padding-bottom: 5px;
+}
+
+.title{
+  text-align: center;
+  padding: 20px;
+}
+
+.title p{
+  font-size: 20px;
+}
+
+.card-body{
+  box-shadow: 0 0 20px 7px rgba(0,0,0,0.1)
+}
+
+.card{
+  margin: 15px 5px;
+}
+
+.card-body a{
+  text-decoration: none;
+  #font-size: 15px;
+  margin-top: auto;
+  #font-weight: 600;
+}
+
+.card-body a:hover{
+  #color: #63a6b0;
+  text-decoration: none;
+}
+
+.inner{
+overflow: hidden;
+}
+
+.inner img{
+transition: all 1.5s ease;
+}
+
+.inner:hover img{
+transform: scale(1.5);
+}
+
+
+/*****End Facilities Css****/
